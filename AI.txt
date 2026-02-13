@@ -1,3 +1,17 @@
+import subprocess
+
+def call_llm(prompt: str, model: str) -> str:
+    result = subprocess.run(
+        ["ollama", "run", model],
+        input=prompt,
+        text=True,
+        capture_output=True
+    )
+
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr)
+
+    return result.stdout.strip()
 
 You said:
 DevOps teams handle numerous incident reports and post-mortems, which are often lengthy and inconsistent in format. Extracting actionable insights and root causes from these documents is time-intensive, delaying resolution and learning. A generative Al agent that summarizes incidents, highlights critical actions taken, and recommends preventive measures can streamline incident management. This improves team responsiveness and knowledge retention, reducing incident.
