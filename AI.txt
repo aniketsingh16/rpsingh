@@ -13,3 +13,6 @@ type nul > src\rca.py
 
 type nul > demo.py
 type nul > README.md
+
+type nul > data\raw_incidents\incident1.txt
+
