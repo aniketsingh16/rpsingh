@@ -1,4 +1,20 @@
+from src.llm_utils import call_llm
 
+def generate_rca_and_prevention(text: str) -> str:
+    prompt = f"""
+    Analyze the following incident and explain:
+    1. Why it happened
+    2. What systemic issue caused it
+    3. How similar incidents can be prevented
+
+    Incident:
+    {text}
+    """
+
+    return call_llm(prompt, model="deepseek-r1")
+ 
+
+.
 import json
 from src.llm_utils import call_llm
 
