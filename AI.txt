@@ -3,3 +3,13 @@ You said:
 DevOps teams handle numerous incident reports and post-mortems, which are often lengthy and inconsistent in format. Extracting actionable insights and root causes from these documents is time-intensive, delaying resolution and learning. A generative Al agent that summarizes incidents, highlights critical actions taken, and recommends preventive measures can streamline incident management. This improves team responsiveness and knowledge retention, reducing incident.
 
 Hey, I'm in an AI hackathon internal hackathon by TCS. I need your help in the above problem statement.  you have to provide an innovative answer.
+
+
+type nul > src\ingest.py
+type nul > src\llm_utils.py
+type nul > src\summarize.py
+type nul > src\extract.py
+type nul > src\rca.py
+
+type nul > demo.py
+type nul > README.md
