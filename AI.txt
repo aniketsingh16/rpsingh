@@ -1,4 +1,28 @@
-from src.llm_utils import call_llm
+from src.ingest import load_incident
+from src.summarize import summarize_incident
+from src.extract import extract_incident_details
+from src.rca import generate_rca_and_prevention
+
+FILE_PATH = "data/raw_incidents/incident1.txt"
+
+def main():
+    text = load_incident(FILE_PATH)
+
+    print("\n--- INCIDENT SUMMARY ---")
+    print(summarize_incident(text))
+
+    print("\n--- STRUCTURED DETAILS ---")
+    print(extract_incident_details(text))
+
+    print("\n--- RCA & PREVENTION ---")
+    print(generate_rca_and_prevention(text))
+
+if __name__ == "__main__":
+    main()
+ 
+
+
+.....from src.llm_utils import call_llm
 
 def generate_rca_and_prevention(text: str) -> str:
     prompt = f"""
