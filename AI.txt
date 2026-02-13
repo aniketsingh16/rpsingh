@@ -1,4 +1,25 @@
+
+import json
 from src.llm_utils import call_llm
+
+def extract_incident_details(text: str) -> dict:
+    prompt = f"""
+    Extract key incident details in JSON format with keys:
+    trigger, impact, timeline, actions_taken, root_cause.
+
+    Incident:
+    {text}
+    """
+
+    response = call_llm(prompt, model="gemma3")
+
+    try:
+        return json.loads(response)
+    except json.JSONDecodeError:
+        return {"raw_output": response}
+ 
+..
+.from src.llm_utils import call_llm
 
 def summarize_incident(text: str) -> str:
     prompt = f"""
