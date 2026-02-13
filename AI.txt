@@ -16,3 +16,13 @@ type nul > README.md
 
 type nul > data\raw_incidents\incident1.txt
 
+Incident ID: INC-1024
+
+At 14:02 IST, a configuration change was deployed to the Kubernetes autoscaler.
+Within minutes, the Payments API experienced increased latency.
+Alerts triggered at 14:05, and the on-call engineer investigated.
+The root cause was an invalid HPA configuration without proper limits.
+Service was restored by rolling back the configuration at 14:30.
+
+Impact: Payment transactions were delayed for 28 minutes.
+
